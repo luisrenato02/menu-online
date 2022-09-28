@@ -1,5 +1,6 @@
 <?php
-	
+
+
 
 	class produto{
 		private $id;
@@ -60,11 +61,12 @@
 		public function inserir(){
 			$pdo = new conexao();
 			$st=$pdo->conn->prepare(
-			"insert into produto(nome,preco,descricao) ".
-			"values(:n,:p,:d)");
-			$st->bindValue(":n",$this->getNome());
-			$st->bindValue(":p",$this->getPreco());
-			$st->bindValue(":d",$this->getDescricao());
+			"insert into produto(nome,preco,descricao,id_grupo) ".
+			"values(:n,:p,:d,:i)");
+			$st->bindValue(":n", $this->getNome());
+			$st->bindValue(":p", $this->getPreco());
+			$st->bindValue(":d", $this->getDescricao());
+			$st->bindValue(":i", $this->getId_grupo());
 			return $st->execute();	
 		}
 
@@ -108,6 +110,6 @@
 			"update produto set id_grupo =:id_grupo where id=:id");
 			$st->bindValue(":id_grupo", $this->getId_grupo());
 			$st->bindValue(":id", $this->getId());
-		}	
+		}
 	}
 ?>

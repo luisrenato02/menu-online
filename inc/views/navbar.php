@@ -13,10 +13,10 @@ require_once '../inc/controller/session.php';
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
+                    <a class="nav-link" href="<?php echo $config->urlLocal; ?>/admin/lista_produto.php">Produtos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Grupos</a>
+                    <a class="nav-link" href="<?php echo $config->urlLocal; ?>/admin/lista_grupo.php">Grupos</a>
                 </li>
 
                 <li class="nav-item dropdown dropdown-menu-right">

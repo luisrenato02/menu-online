@@ -1,4 +1,5 @@
 <?php
+require_once '../inc/config.php';
 require_once "../inc/views/header.php"; 
 require_once "../inc/views/navbar.php"; ?>
 

@@ -1,5 +1,5 @@
 <?php
-	require_once 'produto.php';
+	require_once '../../class/produto.php';
 
 
 	if(isset($_POST['nome'])){

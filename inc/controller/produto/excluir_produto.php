@@ -1,5 +1,5 @@
 <?php
-	require_once 'produto.php';	
+	require_once '../../class/produto.php';	
 	if(isset($_GET['id'])){
 		$product = new produto();
 		$product->setId($_GET['id']);
