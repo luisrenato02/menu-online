@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once __DIR__ . '../../class/user.php';
+require_once __DIR__ . '../../model/user.php';
 
 // Verifique se o usuário já está logado, em caso afirmativo, redirecione-o para a página de boas-vindas
 if (isset($_SESSION['uid']) != "") {
@@ -35,7 +35,7 @@ if (isset($_POST["btn-login"])) {
   if (!$error) {
     $password_hash = hash('sha256', $password);
 
-    $user = new user();
+    $user = new User();
     $user->setUsername($username);
     $resp = $user->getUserByUsername();
     $strow = $resp->fetch();
@@ -53,6 +53,8 @@ if (isset($_POST["btn-login"])) {
     } else if ($stcount == 0) {
       $errorType = "danger";
       $errorMSG = "O nome de usuário inserido não pertence a uma conta. Verifique seu nome de usuário e tente novamente.";
+      echo 'Passei aqui';
+
 
       //Mostra uma mensagem de erro caso o st seja igual a 0 indicando que a senha está errada
     } else if ($stcount == 1 && $strow['password'] !== $password_hash) {

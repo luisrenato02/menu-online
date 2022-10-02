@@ -1,10 +1,9 @@
 <?php 
-
 session_start();
 
     if(isset($_SESSION['uid']) != ""){
-        $pdo = new conexao();
-        $st=$pdo->conn->prepare("SELECT * FROM login WHERE id=:id");
+        $pdo = new Connection();
+        $st = $pdo->conn->prepare("SELECT * FROM users WHERE id=:id");
         $st->bindValue(":id", $_SESSION['uid']);
         $st->execute();	
         $strow=$st->fetch();
@@ -12,4 +11,9 @@ session_start();
         if($st->rowCount() == 0){
             echo "<script>window.location='".$config->urlLocal."/admin/logout.php?logout'; </script>";
         }
+    }
+
+    if (isset($_SESSION['uid']) == "") {
+        header("Location: " . $config->urlLocal . "./admin/login.php");
+        exit;
     }

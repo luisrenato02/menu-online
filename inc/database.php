@@ -1,15 +1,15 @@
 <?php
-    class conexao{
-         private $db="malbec";
-         private $user="root";
-         private $senha="";
-         private $servidor="localhost";
+    class Connection {
+         private $host = "localhost";
+         private $database = "malbec";
+         private $username = "root";
+         private $password = "";
          public $conn;
 
          public function __construct(){
                try{
-                    $this->conn = new PDO( "mysql:host=".$this->servidor.";dbname=".$this->db,$this->user,$this->senha);
-	     $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $this->conn = new PDO( "mysql:host=".$this->host.";dbname=".$this->database,$this->username,$this->password);
+	               $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 }catch(PDOException $e){
                      echo "ERRO: ".$e->getMessage();
                 }			

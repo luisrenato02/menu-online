@@ -1,4 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
   height: 100%;
+}
+
+body {
+  background-color: #fff;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+button:hover,
+button:focus,
+button:active,
+button:active:focus:not(:disabled):not(.disabled) {
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn:active:focus:not(:disabled):not(.disabled) {
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+.card--product {
+  background: transparent;
+}
+
+.card--product .product--image {
+  max-width: 100%;
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.card--product .product--name {
+  color: #fff;
+}
+
+.card--product .product--description {
+  color: #fff;
+}
+
+.list-group li {
+  display: grid;
+  grid-template-columns: 6tr 6tr;
+}
+
+.container--logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.container--logo .logo {
+  max-width: 100%;
+  height: 200px;
+}
+
+.category--name {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-size: 2.5rem;
 }

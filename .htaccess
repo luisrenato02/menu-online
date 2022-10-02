@@ -1,0 +1,17 @@
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+<IfModule pagespeed_module>
+  ModPagespeed off
+</IfModule>
+
+ServerSignature Off 
+
+<IfModule mod_rewrite.c>
+  Options -Indexes
+  RewriteEngine On
+
+  RewriteRule ^admin/group/(.*)$/?$ admin/update_group.php?group_id=$1 [NC,L]
+  RewriteRule ^admin/product/(.*)$/?$ admin/update_product.php?product_id=$1 [NC,L]
+</IfModule>
