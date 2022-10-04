@@ -12,11 +12,6 @@ $page_title = "Inicio";
 
 $lastCategory = '';
 
-//Columns must be a factor of 12 (1,2,3,4,6,12)
-$numOfCols = 4;
-$rowCount = 0;
-$bootstrapColWidth = 12 / $numOfCols;
-$arrayCount = count($rows);
 
 require_once './inc/views/header.php';
 ?>
@@ -46,8 +41,7 @@ require_once './inc/views/header.php';
       <?php } ?>
 
 
-      <div class="row mt-4 pb-5">
-
+      <div class="row mt-4 pb-5 text-center">
 
         <div class="col-md-4">
           <div class="card card--product">
@@ -73,7 +67,7 @@ require_once './inc/views/header.php';
       </div>
     <?php } ?>
   <?php } else { ?>
-    Loja ainda sem produto
+    <h1 class="text-center text-white display-4">Loja ainda sem produtos</h1>
   <?php } ?>
 
 </main>

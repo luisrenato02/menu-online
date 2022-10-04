@@ -9,8 +9,8 @@ $config = new stdClass();
 $config->instDir = dirname($_SERVER["SCRIPT_NAME"]);
 if ($config->instDir == "/") unset($config->instDir);
 
-$config->patch = "menu%20online";
-//$config->urlLocal = "https://". $_SERVER["HTTP_HOST"];
+$config->path = "menu-online";
+
 //$config->urlLocal = "http://". $_SERVER["HTTP_HOST"];
-//$config->urlLocal = "https://". $_SERVER["HTTP_HOST"]."/".$config->patch;
-$config->urlLocal = "http://" . $_SERVER["HTTP_HOST"] . "/" . $config->patch;
+
+$config->urlLocal = "http://" . $_SERVER["HTTP_HOST"] . "/" . $config->path;

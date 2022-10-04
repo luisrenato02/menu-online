@@ -45,12 +45,15 @@ require_once "../inc/views/navbar.php";
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($product_all as $product_row) { ?>
+                                <?php foreach ($product_all as $product_row) { 
+                                    $name = $product_row['product_description'];
+                                    $description = strlen($name) > 30 ? substr($name,0,30). "..." : $name;
+                                    ?>
                                     <tr>
                                         <td><?php echo $product_row['product_id']; ?></td>
                                         <td><?php echo $product_row['product_name']; ?></td>
                                         <td><?php echo $product_row['product_price']; ?></td>
-                                        <td><?php echo $product_row['product_description'] == null ? "Não ha descrição" : $product_row['product_description']; ?></td>
+                                        <td><?php echo $product_row['product_description'] == null ? "Não ha descrição" : $description; ?></td>
                                         <td><?php echo $product_row['group_name']; ?></td>
                                         <td class="text-center">
                                             <div class="dropdown">

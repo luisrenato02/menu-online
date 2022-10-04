@@ -53,7 +53,7 @@ if (isset($_POST["btn-login"])) {
     } else if ($stcount == 0) {
       $errorType = "danger";
       $errorMSG = "O nome de usuário inserido não pertence a uma conta. Verifique seu nome de usuário e tente novamente.";
-      echo 'Passei aqui';
+    
 
 
       //Mostra uma mensagem de erro caso o st seja igual a 0 indicando que a senha está errada

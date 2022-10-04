@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Out-2022 às 20:28
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 7.4.29
+-- Tempo de geração: 05-Out-2022 às 01:34
+-- Versão do servidor: 10.4.14-MariaDB
+-- versão do PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,14 @@ CREATE TABLE `groups` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `groups`
+--
+
+INSERT INTO `groups` (`group_id`, `group_name`, `update_at`, `created_at`) VALUES
+('bssc5s5300lxnp8', 'Lanches', '2022-10-04 23:00:59', '2022-10-04 23:00:59'),
+('rfhnwpntx3tuiuk', 'Beirutes', '2022-10-04 23:26:43', '2022-10-04 23:03:55');
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +59,15 @@ CREATE TABLE `products` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `products`
+--
+
+INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `product_price`, `product_image`, `id_group`, `update_at`, `created_at`) VALUES
+('lhp91hbkbsrndd5', 'Xurrasco', 'Bemboa', 22, '12263218161664924681download.jpg', 'rfhnwpntx3tuiuk', '2022-10-04 23:27:18', '2022-10-04 23:04:41'),
+('r5lsl2a7fm4w254', 'Beiçola', 'KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK', 65, '13456611331664924627download.jpg', 'bssc5s5300lxnp8', '2022-10-04 23:27:31', '2022-10-04 23:03:47'),
+('xdvrgtl5o2sfq5h', 'X-Beicon', 'Lanche a base de cálcio\r\n\r\n\r\n\r\n\r\nd', 56, '16434118751664924581download.jpg', 'bssc5s5300lxnp8', '2022-10-04 23:33:26', '2022-10-04 23:03:01');
+
 -- --------------------------------------------------------
 
 --
@@ -64,6 +81,12 @@ CREATE TABLE `users` (
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
+(2, 'luis', '0f9dbab494594994c643ed8220cec23a90eb30fb75cc02001d1079748e6fd542', '2022-10-04 20:00:07');
 
 --
 -- Índices para tabelas despejadas
@@ -97,7 +120,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas
